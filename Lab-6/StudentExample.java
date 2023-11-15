@@ -40,6 +40,7 @@ public class StudentExample {
 
 // TO RUN THE FILE
 
+// create a floder called "src"
 // xjc -d src student.xsd
 // javac -cp src StudentExample.java
 // java -cp .:src:src/generated StudentExample
