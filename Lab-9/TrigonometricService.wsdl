@@ -1,0 +1,16 @@
+<!-- TrigonometricService.wsdl -->
+<definitions name="TrigonometricService" targetNamespace="http://example.com/TrigonometricService" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://example.com/TrigonometricService" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <message name="TrigonometricInputMessage">
+        <part name="angle" type="xsd:double"/>
+    </message>
+    <message name="TrigonometricOutputMessage">
+        <part name="sine" type="xsd:double"/>
+        <part name="cosine" type="xsd:double"/>
+    </message>
+    <portType name="TrigonometricPortType">
+        <operation name="trigonometricOperation">
+            <input message="tns:TrigonometricInputMessage"/>
+            <output message="tns:TrigonometricOutputMessage"/>
+        </operation>
+    </portType>
+</definitions>

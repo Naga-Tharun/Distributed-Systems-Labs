@@ -1,0 +1,27 @@
+<!-- ArithmeticService.wsdl -->
+<definitions name="ArithmeticService" targetNamespace="http://example.com/ArithmeticService" 
+    xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://example.com/ArithmeticService" 
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <message name="ArithmeticInputMessage">
+        <part name="a" type="xsd:int"/>
+        <part name="b" type="xsd:int"/>
+    </message>
+    <message name="ArithmeticOutputMessage">
+        <part name="sum" type="xsd:int"/>
+        <part name="difference" type="xsd:int"/>
+    </message>
+    <portType name="ArithmeticPortType">
+        <operation name="arithmeticOperation">
+            <input message="tns:ArithmeticInputMessage"/>
+            <output message="tns:ArithmeticOutputMessage"/>
+        </operation>
+    </portType>
+    <binding name="ArithmeticBinding" type="tns:ArithmeticPortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    </binding>
+    <service name="ArithmeticService">
+        <port name="ArithmeticPort" binding="tns:ArithmeticBinding">
+            <soap:address location="http://example.com/ArithmeticService"/>
+        </port>
+    </service>
+</definitions>
